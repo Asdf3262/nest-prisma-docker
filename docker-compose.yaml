@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    env_file:
+      - .env
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+  api:
+    container_name: api
+    restart: always
+    # depend ??
+    depends_on:
+      - mysql
+    build:
+      context: ./api
+      target: build
+      dockerfile: Dockerfile
+    ports:
+      - "${API_PORT}:3003"
+    env_file:
+      - ./api/.env
+      - .env
+    volumes:
+      - ./api:/usr/src/app
+    command: npm run start:dev
+volumes:
+  db-data:
