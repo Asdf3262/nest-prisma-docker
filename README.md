@@ -26,27 +26,29 @@ docker restart api
 
 ## Users
 
-`Add a User` [/users/add](#post-users/add)
-`Verify login user` [/users/login](#post-users/add)
-`Get users` [/users]()
+`Add a User` [/users/add](#post-users/add)<br/>
+`Verify login user` [/users/login](#post-users/add)<br/>
+`Get users` [/users]()<br/>
 
 ### POST users/add
 
 **Parameters**
 
-|Name          | Required | Type
-|`email`       | required | string
-|`username`    | optional | string
-|`password`    | required | string
+|Name          | Required | Type    |
+| ------------ | -------- | ------- |
+|`email`       | required | string  |
+|`username`    | optional | string  |
+|`password`    | required | string  |
 
 ### POST users/login
 
 **Parameters**
 
-|Name          | Required | Type
-|`email`       | required | string
-|`username`    | optional | string
-|`password`    | required | string
+|Name          | Required | Type    |
+| ------------ | -------- | ------- |
+|`email`       | required | string  |
+|`username`    | optional | string  |
+|`password`    | required | string  |
 
 # PS
 
